@@ -1,0 +1,20 @@
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# Cache Python e Notebooks
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+
+# Dados brutos e processados (ignora dados pesados, mantém as pastas)
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+
+# IDEs e SO
+.vscode/
+.DS_Store
+Thumbs.db
