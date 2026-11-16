@@ -3,6 +3,9 @@ Módulo de análise estatística e visualização de dados do setor elétrico.
 1. Consulta o banco relacional SQLite (energy_sector.db).
 2. Calcula matrizes de correlação paramétrica (Pearson) e não-paramétrica (Spearman).
 3. Gera e exporta figuras em alta resolução (300 DPI) para docs/figures/.
+
+Exemplo de uso:
+    python src/analysis.py
 """
 import os
 import sqlite3
