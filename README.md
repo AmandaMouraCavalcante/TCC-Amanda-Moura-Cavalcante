@@ -139,7 +139,7 @@ O projeto requer Python 3.10 ou superior.
 
 ```bash
 # Clonar o repositório
-git clone https://github.com/amandacavalcante/TCC-Amanda-Moura-Cavalcante.git
+git clone https://github.com/AmandaMouraCavalcante/TCC-Amanda-Moura-Cavalcante.git
 cd TCC-Amanda-Moura-Cavalcante
 
 # Criação do ambiente virtual
@@ -210,16 +210,18 @@ As quatro figuras geradas são salvas em `docs/figures/`:
 
 ## 7. Síntese dos Resultados Estatísticos
 
-A avaliação quantitativa das séries históricas consolidadas (2021 a 2026) fundamenta as seguintes conclusões técnicas:
+> **Nota sobre atualização dinâmica (ano corrente de 2026):** Como os dados de 2026 são publicados continuamente pelo ONS e pela CCEE, os coeficientes numéricos exatos e as figuras em `docs/figures/` variam ligeiramente a cada nova execução de `python main.py` seguido de `python src/analysis.py`, que imprime a tabela completa atualizada no console.
 
-1. **Correlação Inversa entre Armazenamento e Preço:**  
-   Em todos os submercados com capacidade expressiva de regularização plurianual, a correlação entre EAR e PLD é estatisticamente significante ($p < 10^{-100}$) e negativa. No subsistema Sul, o coeficiente de Spearman atinge $\rho = -0,460$; no Sudeste/Centro-Oeste, atinge $\rho = -0,455$. O resultado comprova empiricamente que o esgotamento dos reservatórios eleva o custo marginal de operação e força a escalada dos preços no mercado de curto prazo.
+A avaliação quantitativa das séries históricas consolidadas (2021 a 2026) fundamenta as seguintes conclusões estruturais:
 
-2. **Assimetria Não-Linear e Efeito das Travas Regulatórias:**  
-   A correlação monotônica de Spearman supera consistentemente a correlação linear de Pearson em capacidade explicativa. Isso ocorre porque o PLD está sujeito a limites regulatórios de piso (aproximadamente R$ 60,00/MWh) e teto definidos pela ANEEL. Os diagramas de dispersão evidenciam um perfil característico em "L": durante a crise hídrica de 2021, o PLD operou próximo ao teto; nos períodos de recuperação e abundância (2022 e 2023), o preço saturou no piso legal, atenuando a linearidade do modelo de Pearson.
+1. **Correlação Inversa entre Armazenamento e Preço (`EAR × PLD`):**  
+   Nos submercados com maior capacidade de regularização (`S`, `SE/CO` e `NE`), a correlação entre EAR e PLD é negativa e altamente significante ($p \ll 0{,}001$). O resultado comprova empiricamente que o esgotamento dos reservatórios eleva o custo marginal de operação e pressiona os preços no mercado de curto prazo.
 
-3. **Especificidade Operacional do Subsistema Norte:**  
-   Diferente dos demais submercados, no subsistema Norte a correlação de Spearman entre a Energia Natural Afluente (ENA) e o PLD é expressiva ($\rho = -0,505$), suplantando o efeito do EAR ($\rho = -0,173$). Esse comportamento decorre da presença de grandes usinas hidrelétricas a fio d'água (notadamente Belo Monte), cuja reduzida capacidade de acumulação torna a geração dependente do fluxo hidrológico afluente imediato.
+2. **Assimetria Não-Linear, Travas Regulatórias e Comparação Pearson vs. Spearman:**  
+   Os diagramas de dispersão evidenciam um perfil característico em "L" decorrente dos limites regulatórios de piso (aproximadamente R$ 60,00/MWh) e teto definidos pela ANEEL: durante a crise hídrica de 2021, o PLD operou próximo ao teto; nos períodos de abundância (2022 e 2023), o preço saturou continuamente no piso legal. Por conta desses extremos de 2021, o coeficiente linear de **Pearson** apresenta magnitude expressiva em `EAR × PLD` nos submercados `S`, `SE/CO` e `NE`, enquanto o coeficiente monotônico de **Spearman** supera consistentemente o de Pearson na relação `ENA × PLD` nos submercados `S`, `NE` e `N`, capturando a dependência não linear.
+
+3. **Especificidade Operacional do Subsistema Norte (`N`):**  
+   Diferente dos demais submercados, no subsistema Norte a correlação de Spearman entre a Energia Natural Afluente (`ENA`) e o `PLD` supera de forma expressiva o efeito do armazenamento (`EAR`). Esse comportamento decorre da presença de grandes usinas hidrelétricas a fio d'água (notadamente Belo Monte), cuja reduzida capacidade de acumulação torna o atendimento dependente do fluxo hidrológico afluente imediato.
 
 ---
 
@@ -245,4 +247,3 @@ A avaliação quantitativa das séries históricas consolidadas (2021 a 2026) fu
 - **Instituição:** Universidade Tecnológica Federal do Paraná (UTFPR)
 - **Curso:** Engenharia de Computação
 - **Autora:** Amanda Moura Cavalcante
-- **Ano de Conclusão:** 2026
