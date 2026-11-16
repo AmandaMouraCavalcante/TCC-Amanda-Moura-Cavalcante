@@ -1,9 +1,11 @@
-# Integração de Dados e Análise da Relação entre Disponibilidade Hídrica e Preços de Energia Elétrica no Mercado Brasileiro (2021–2026)
+# Painel de Visualização de Indicadores de Desempenho Energético: Integração de Dados de Disponibilidade Hídrica e Preços de Energia no Brasil
 
 **Trabalho de Conclusão de Curso**  
 Curso de Engenharia de Computação  
 Universidade Tecnológica Federal do Paraná (UTFPR)  
-Autora: Amanda Moura Cavalcante  
+Orientadora: Rosangela de Fatima Pereira Marquesone  
+Coorientadora: Maria Eugenia Dajer  
+Autora: Amanda Moura Cavalcante
 
 ---
 
@@ -70,6 +72,8 @@ O pipeline é estruturado em módulos com separação clara de responsabilidades
 
 ```text
 TCC-Amanda-Moura-Cavalcante/
+├── bi/
+│   ├── energy_dashboard.pbix # Painel Interativo no Power BI
 ├── data/
 │   ├── raw/                 # Dados brutos em cache local (armazenamento local)
 │   └── processed/           # Arquivos Parquet, CSV e banco SQLite (energy_sector.db)
@@ -101,7 +105,7 @@ TCC-Amanda-Moura-Cavalcante/
 
 O banco de dados relacional `data/processed/energy_sector.db` implementa o esquema estrela (*Star Schema*):
 
-### Tabela Fato: `fato_energia_daily`
+### Tabela de Métricas: `energy_metrics_daily`
 
 | Coluna | Tipo | Restrição | Descrição |
 | :--- | :--- | :--- | :--- |
@@ -238,12 +242,3 @@ A avaliação quantitativa das séries históricas consolidadas (2021 a 2026) fu
 | Modelagem Quantitativa | SciPy | 1.11+ | Testes de correlação e cálculo de $p$-valores |
 | Visualização de Dados | Matplotlib / Seaborn | 3.8+ / 0.13+ | Construção de figuras científicas a 300 DPI |
 | Verificação de Código | Unittest | Padrão Python | Bateria de testes unitários automatizados |
-
----
-
-## 9. Identificação Institucional
-
-- **Trabalho de Conclusão de Curso (TCC)**
-- **Instituição:** Universidade Tecnológica Federal do Paraná (UTFPR)
-- **Curso:** Engenharia de Computação
-- **Autora:** Amanda Moura Cavalcante
